@@ -41,6 +41,6 @@ class GetHandler(BaseHTTPRequestHandler):
 
 
 if __name__ == '__main__':
-    server = HTTPServer(('', 8001), GetHandler)
+    server = HTTPServer(('', 8000), GetHandler)
     print('Starting server, use <Ctrl-C> to stop')
     server.serve_forever()

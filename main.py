@@ -7,10 +7,10 @@ app = Flask(__name__)
 
 @app.route('/webhook', methods=['POST'])
 def handle_form():
-    request.headers["Content-Type"] = "multipart/form-data; charset=utf-8"
-    data = request.json
-    print (data)
-    return data
+    header = request.headers["Content-Type"]
+    key_1 = request.values.get("json")
+    print (key_1)
+    return "Ok"
 
 
 @app.route("/")

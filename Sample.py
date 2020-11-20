@@ -36,6 +36,7 @@ class GetHandler(BaseHTTPRequestHandler):
                 json_data = json.loads(raw_data)
             except JSONDecodeError:
                 json_data = {}
+
         print(json_data)
         self.wfile.write(b'OK')
 

@@ -21,7 +21,8 @@ def receiveInfo():
     dataReceived = request.values.get("json") # data is received as Form-Data. json holds the data we want
     PlateInfo = json.loads(dataReceived)
     LicensePlate = buildLicensePlate(PlateInfo) #Build LicensePlate Object with data received
-    LicensePlate.inserted_id = str(DBHelper.insertToDB(LicensePlate)) #Insert into DB
+    inserted_id = str(DBHelper.insertToDB(LicensePlate)) #Insert into DB
+    LicensePlate.inserted_id = inserted_id
     AddToQueue.sendLicensePlateToQueue(LicensePlate) #Send to Queue
     return "Ok"
 
